@@ -114,6 +114,11 @@ public class m_archivo {
     public void setRaiz(archivo Node){
         this.raiz = Node;
     }
+    
+    public archivo retAVL(){
+        return this.raiz;
+    }
+    
     //----para eliminar
     archivo minValueNode(archivo node){
         archivo current = node;

@@ -3,4 +3,5 @@ public class padre {
     String carpeta;
     padre siguinete;
     carpeta derecha;
+    carpeta hd;
 }

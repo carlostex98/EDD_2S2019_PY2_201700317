@@ -1,17 +1,37 @@
 package gul;
+import java.util.Date;
+import java.sql.Timestamp;
+
 public class inicio_us extends javax.swing.JFrame {
     usuarios actual_us;
+    carpeta carpet;
+    padre pp;
+    hijo hh;
+    archivo ralix;
+    
+    m_archivo rara = new m_archivo();
     public void mostrarUs(String rr){
         nomb.setText(rr);
     }
-    
+    public String tmxx(){
+        Date date= new Date();
+        long time = date.getTime();
+        Timestamp ts = new Timestamp(time);
+        String g = ts.toString();
+        return g;
+    }
     
     
     
     public inicio_us() {//on load
         initComponents();
         actual_us=principal.h.retSel();
+        pp = actual_us.p;
+        hh = actual_us.h;
+        carpet = pp.derecha;
+        ralix=carpet.raiz;
         this.mostrarUs(actual_us.nombre);   
+        principal.arbol.setRaiz(ralix);
     }
     
     
@@ -200,7 +220,10 @@ public class inicio_us extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        new n_archivo().setVisible(true);
         
+        //rara.raiz = rara.insertar(rara.raiz, principal.txt.nombre_x, principal.txt.contenido_x, this.tmxx());
+        //rara.inRd(ralix);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     public static void main(String args[]) {

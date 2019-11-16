@@ -70,7 +70,8 @@ public class m_usuarios {
             }
             
         }
-        
+     //inicializacion de carpeta 
+     
     }
 
     public boolean tam_x() {
@@ -130,11 +131,12 @@ public class m_usuarios {
     }
     
     public padre ret_padre(String nombre){
-        usuarios actual = new usuarios();
-        padre pp=new padre();
-        actual=this.primero;
+        usuarios actual = this.primero;
+        padre pp=null;
+        
         while(true){
-            if(nombre==actual.nombre){
+            if(nombre.equals(actual.nombre)){
+                //System.out.println("yes");
                 pp=actual.p;
                 break;
             }else{
@@ -144,11 +146,10 @@ public class m_usuarios {
         return pp;
     }
     public hijo ret_hijo(String nombre){
-        usuarios actual = new usuarios();
-        hijo hh=new hijo();
-        actual=this.primero;
+        usuarios actual = this.primero;
+        hijo hh=null;
         while(true){
-            if(nombre==actual.nombre){
+            if(nombre.equals(actual.nombre)){
                 hh=actual.h;
                 break;
             }else{
@@ -156,6 +157,23 @@ public class m_usuarios {
             }
         }
         return hh;
+    }
+    
+    public usuarios retUs(String nombre){
+        usuarios actual=this.primero;
+        while(true){
+            if(nombre.equals(actual.nombre)){
+                break;
+            }else{
+                if(actual==null){
+                    break;
+                }else{
+                    actual= actual.siguiente;
+                }
+            }
+        }
+        
+        return actual;
     }
     
     

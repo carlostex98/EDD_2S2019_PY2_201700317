@@ -104,11 +104,13 @@ public class logueo extends javax.swing.JFrame {
         if(us){
             if(a.equals("admin")){
                 new admin().setVisible(true);
+                this.dispose();
             }else{
                 new inicio_us().setVisible(true);
+                this.dispose();
             }
             
-            this.dispose();
+            
         }else{
             System.out.println("no-existe");
         }
