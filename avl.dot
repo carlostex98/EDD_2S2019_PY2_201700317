@@ -1,0 +1,8 @@
+digraph sls{
+node [shape=box]
+sss[label="ss.s" ]; 
+sxsssp[label="sxsss.p" ]; 
+
+sss->sxsssp; 
+
+}

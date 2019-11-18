@@ -6,4 +6,6 @@ public class carpeta {
     carpeta siguiente;
     carpeta abajo;
     archivo raiz;
+    padre sig;
+    hijo arriba;
 }

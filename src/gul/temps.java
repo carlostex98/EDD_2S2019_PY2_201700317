@@ -14,4 +14,6 @@ public class temps {
         this.nombre_x=arh;
         this.contenido_x = cont;
     }
+    
+    
 }

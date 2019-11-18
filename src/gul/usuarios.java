@@ -8,4 +8,6 @@ public class usuarios {
     usuarios siguiente;
     padre p;
     hijo h;
+    padre last_p;
+    hijo last_h;
 }

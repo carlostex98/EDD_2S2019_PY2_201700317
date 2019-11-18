@@ -6,10 +6,15 @@ public class archivo {
     archivo def;
     archivo izq;
     int hei;
-    archivo(String arch, String cont, String tpm){
+    
+    String prop;
+    int bal;
+    archivo(String arch, String cont, String tpm, String prp, int balx){
         archivo = arch;
         contenido = cont;
         tmtp = tpm;
         hei = 1;
+        prop=prp;
+        bal=balx;
     }
 }

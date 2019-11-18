@@ -1,6 +1,9 @@
 package gul;
+
+import javax.swing.JOptionPane;
+
 public class m_archivo {
-   archivo raiz;
+   
    int height(archivo N){
        if(N == null){
            return 0;
@@ -44,21 +47,24 @@ public class m_archivo {
        return height(N.izq) - height(N.def);
    }
    
-   archivo insertar(archivo node, String nombre, String contenido, String tmtm){
+   archivo insertar(archivo node, String nombre, String contenido, String tmtm, String prp){
+       int balance = getBalance(node);
        if(node==null){
-           return (new archivo(nombre,contenido, tmtm));
+           return (new archivo(nombre,contenido, tmtm,prp,balance));
        }
        
        if (comp(nombre,node.archivo)<0){
-           node.izq = insertar(node.izq, nombre, contenido, tmtm);
+           node.izq = insertar(node.izq, nombre, contenido, tmtm,prp);
        }else if(comp(nombre,node.archivo)>0){
-           node.def = insertar(node.def, nombre, contenido, tmtm);
+           node.def = insertar(node.def, nombre, contenido, tmtm, prp);
        }else{
+           node.contenido=contenido;
+           JOptionPane.showMessageDialog(null, "Sobreescritura!");
            return node;
        }
        
        node.hei = 1 + max(height(node.izq),height(node.def));
-       int balance = getBalance(node);
+       
        
        if(balance > 1 && (comp(nombre, node.izq.archivo)<0)){
            return rightRotate(node);
@@ -106,18 +112,14 @@ public class m_archivo {
     } 
     
     void inRd(archivo node){
-        inRd(node.izq);
-        System.out.println(node.archivo);
-        inRd(node.def);
+        if(node != null){
+           inRd(node.izq);
+            System.out.println(node.archivo);
+            inRd(node.def); 
+        }
     }
     
-    public void setRaiz(archivo Node){
-        this.raiz = Node;
-    }
     
-    public archivo retAVL(){
-        return this.raiz;
-    }
     
     //----para eliminar
     archivo minValueNode(archivo node){
